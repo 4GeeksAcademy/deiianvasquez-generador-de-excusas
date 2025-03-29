@@ -13,11 +13,10 @@ window.onload = function () {
   let when = ['before the class', 'when I was sleeping', 'while I was exercising', 'during my lunch', 'while I was praying'];
 
 
-  let whoRandom = who[Math.floor(Math.random() * who.length)]
-  let actionRandom = action[Math.floor(Math.random() * action.length)]
-  let whatRandom = what[Math.floor(Math.random() * what.length)]
-  let whenRandom = when[Math.floor(Math.random() * when.length)]
-
+  const getRandomWord = (arr) => {
+    let result = arr[Math.floor(Math.random() * arr.length)]
+    return result
+  }
 
 
   /*
@@ -38,6 +37,6 @@ window.onload = function () {
 
 
   let excuse = document.getElementById("excuse")
-  excuse.innerHTML = `${whoRandom} ${actionRandom} ${whatRandom} ${whenRandom}`
+  excuse.innerHTML = `${getRandomWord(who)} ${getRandomWord(action)} ${getRandomWord(what)} ${getRandomWord(when)}`
 
 };
